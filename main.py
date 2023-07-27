@@ -1,8 +1,11 @@
 import os
 
 from flask import Flask
+from apis.telegram_bot import telegram_bot
 
 app = Flask(__name__)
+app.register_blueprint(telegram_bot)
+
 
 @app.route("/")
 def hello_world():
